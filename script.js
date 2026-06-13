@@ -1,93 +1,27 @@
 
 
-function searchFormula(){
+let favorites =
+JSON.parse(
+localStorage.getItem("favorites")
+) || [];
 
-    const keyword =
-    document
-    .getElementById("formulaSearch")
-    .value
-    .toLowerCase()
-    .replace(/\s/g,"")
-    .normalize("NFKC");
+function toggleFavorite(id){
 
-    const box =
-    document
-    .getElementById("formulaResults");
+    if(favorites.includes(id)){
+        favorites = favorites.filter(f => f !== id);
+    }else{
+        favorites.push(id);
+    }
 
-    box.innerHTML = "";
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
 
-    formulas
-    .filter(item => {
-
-        const title =
-        (item.title || "")
-        .toLowerCase()
-        .replace(/\s/g,"")
-        .normalize("NFKC");
-
-        const subject =
-        (item.subject || "")
-        .toLowerCase()
-        .replace(/\s/g,"")
-        .normalize("NFKC");
-
-        const category =
-        (item.category || "")
-        .toLowerCase()
-        .replace(/\s/g,"")
-        .normalize("NFKC");
-
-        const formula =
-        (item.formula || "")
-        .toLowerCase()
-        .replace(/\s/g,"")
-        .normalize("NFKC");
-
-        return (
-
-    keyword === "" ||
-
-    title.includes(keyword) ||
-
-    subject.includes(keyword) ||
-
-    category.includes(keyword) ||
-
-    formula.includes(keyword)
-
-);
-
-    })
-    .forEach(item => {
-
-        const div =
-        document.createElement("div");
-
-        div.className = "formula-card";
-        
-        div.innerHTML =
-
-        "<h3>" + item.title + "</h3>" +
-
-        "<p>📚 <b>과목:</b> " +
-        item.subject +
-        "</p>" +
-
-        "<p>🧩 <b>카테고리:</b> " +
-        item.category +
-        "</p>" +
-
-        "<p>📐 <b>공식:</b></p>" +
-
-        "<p>" +
-        item.formula +
-        "</p><hr>";
-
-        box.appendChild(div);
-
-    });
-
+    searchConcept();
+    searchFormula();
 }
+
 
 function checkAchievements(){
 
@@ -169,11 +103,6 @@ Number(localStorage.getItem("correct")) || 0;
 let wrongs =
 JSON.parse(
 localStorage.getItem("wrongs")
-) || [];
-
-let favorites =
-JSON.parse(
-localStorage.getItem("favorites")
 ) || [];
 
 let achievements =
@@ -1002,6 +931,10 @@ function showTab(id){
     .getElementById("formulaResults")
     .classList.add("hidden-formula");
 
+    if(id !== "concepts"){
+        document.getElementById("conceptResults").innerHTML = "";
+    }
+
 }
 
 function shuffleCards(){
@@ -1245,109 +1178,12 @@ if(correct === 100){
 }
 
 
-function searchConcept(){
-
-    const keyword =
-    document
-    .getElementById("searchInput")
-    .value
-.toLowerCase()
-.replace(/\s/g, "");
-
-    const box =
-    document
-    .getElementById("conceptResults");
-
-    box.innerHTML = "";
-
-    
-    concepts
-    .filter(item => {
-
-    const title =
-    (item.title || "")
-    .toLowerCase()
-    .replace(/\s/g,"");
-
-    const subject =
-    (item.subject || "")
-    .toLowerCase()
-    .replace(/\s/g,"");
-
-    const category =
-    (item.category || "")
-    .toLowerCase()
-    .replace(/\s/g,"");
-
-    const content =
-    (item.content || "")
-    .toLowerCase()
-    .replace(/\s/g,"");
-
-    return (
-        title.includes(keyword) ||
-        subject.includes(keyword) ||
-        category.includes(keyword) ||
-        content.includes(keyword)
-    );
-
-})
-    .forEach(item => {
-
-        const div =
-        document.createElement("div");
-
- div.innerHTML =
-"<h3>" + item.title + "</h3>" +
-
-"<p>📚 <b>과목:</b> " +
-(item.subject || "미분류") +
-"</p>" +
-
-"<p>🧩 <b>카테고리:</b> " +
-(item.category || "미분류") +
-"</p>" +
-
-"<p>📖 <b>설명</b></p>" +
-
-"<p>" +
-item.content +
-"</p><hr>";
-
-        box.appendChild(div);
-
-    });
-
-}
-
 
 document.getElementById("flashcard")
 .innerHTML =
 shuffledCards[0].title;
 
-function toggleFavorite(title){
 
-    if(favorites.includes(title)){
-
-        favorites =
-        favorites.filter(
-        item => item !== title
-        );
-
-    }else{
-
-        favorites.push(title);
-
-    }
-
-    localStorage.setItem(
-    "favorites",
-    JSON.stringify(favorites)
-    );
-
-    searchConcept();
-
-}
 
 function unlockAchievement(name){
 
@@ -1416,3 +1252,297 @@ renderAchievements();
 showTab("formulas")
 
 searchFormula();
+
+function showFavorites(){
+
+    alert("즐겨찾기 실행됨");
+
+    const box =
+    document.getElementById("conceptResults");
+
+    box.innerHTML = "";
+
+    box.innerHTML +=
+    "<h2>📖 즐겨찾기 개념</h2>";
+
+    concepts
+    .filter(item =>
+        favorites.includes(
+            "concept_" + item.title
+        )
+    )
+    .forEach(item => {
+
+        const div =
+        document.createElement("div");
+
+        div.innerHTML =
+
+        "<h3>" +
+        item.title +
+        "</h3>" +
+
+        "<p>📚 <b>과목:</b> " +
+        item.subject +
+        "</p>" +
+
+        "<p>📖 <b>설명:</b></p>" +
+
+        "<p>" +
+        item.content +
+        "</p><hr>";
+
+        box.appendChild(div);
+
+    });
+
+    box.innerHTML +=
+    "<h2>📐 즐겨찾기 공식</h2>";
+
+    formulas
+    .filter(item =>
+        favorites.includes(
+            "formula_" + item.title
+        )
+    )
+    .forEach(item => {
+
+        const div =
+        document.createElement("div");
+
+        div.className =
+        "formula-card";
+
+        div.innerHTML =
+
+        "<h3>" +
+        item.title +
+        "</h3>" +
+
+        "<p>📚 <b>과목:</b> " +
+        item.subject +
+        "</p>" +
+
+        "<p>🧩 <b>카테고리:</b> " +
+        item.category +
+        "</p>" +
+
+        "<p>📐 <b>공식:</b></p>" +
+
+        "<p>" +
+        item.formula +
+        "</p><hr>";
+
+        box.appendChild(div);
+
+    });
+
+}
+
+function searchFormula(){
+
+const keyword =
+document
+.getElementById("formulaSearch")
+.value
+.toLowerCase()
+.trim()
+.normalize("NFKC");
+
+    const box =
+    document
+    .getElementById("formulaResults");
+
+    box.innerHTML = "";
+
+    formulas
+    .filter(item => {
+
+        const title =
+        (item.title || "")
+        .toLowerCase()
+        .replace(/\s/g,"")
+        .normalize("NFKC");
+
+        const subject =
+        (item.subject || "")
+        .toLowerCase()
+        .replace(/\s/g,"")
+        .normalize("NFKC");
+
+        const category =
+        (item.category || "")
+        .toLowerCase()
+        .replace(/\s/g,"")
+        .normalize("NFKC");
+
+        const formula =
+        (item.formula || "")
+        .toLowerCase()
+        .replace(/\s/g,"")
+        .normalize("NFKC");
+
+const keywords = keyword.split(/\s+/);
+
+const searchText = (
+    title + " " +
+    subject + " " +
+    category + " " +
+    formula
+);
+
+return (
+    keyword === "" ||
+    keywords.every(word =>
+        searchText.includes(word)
+    )
+);
+
+    })
+    .forEach(item => {
+
+        const div =
+        document.createElement("div");
+
+        div.className = "formula-card";
+        
+        div.innerHTML =
+
+        "<h3>" +
+item.title +
+
+" <span style='cursor:pointer;font-size:24px' onclick=\"toggleFavorite('formula_" +
+item.title +
+"')\">" +
+
+(
+favorites.includes(
+"formula_" + item.title
+)
+
+? "★" : "☆"
+
+)
+
++
+
+"</span></h3>" +
+
+        "<p>📚 <b>과목:</b> " +
+        item.subject +
+        "</p>" +
+
+        "<p>🧩 <b>카테고리:</b> " +
+        item.category +
+        "</p>" +
+
+        "<p>📐 <b>공식:</b></p>" +
+
+        "<p>" +
+        item.formula +
+        "</p><hr>";
+
+        box.appendChild(div);
+
+    });
+
+}
+
+function searchConcept(){
+
+    const keyword =
+    document
+    .getElementById("searchInput")
+    .value
+.toLowerCase()
+.replace(/\s/g, "");
+
+    const box =
+    document
+    .getElementById("conceptResults");
+
+    box.innerHTML = "";
+
+    
+    concepts
+    .filter(item => {
+
+    const title =
+    (item.title || "")
+    .toLowerCase()
+    .replace(/\s/g,"");
+
+    const subject =
+    (item.subject || "")
+    .toLowerCase()
+    .replace(/\s/g,"");
+
+    const category =
+    (item.category || "")
+    .toLowerCase()
+    .replace(/\s/g,"");
+
+    const content =
+    (item.content || "")
+    .toLowerCase()
+    .replace(/\s/g,"");
+
+   return (
+    keyword === "" ||
+    title.includes(keyword) ||
+    subject.includes(keyword) ||
+    category.includes(keyword) ||
+    content.includes(keyword)
+);
+
+})
+    .forEach(item => {
+
+        const div =
+        document.createElement("div");
+
+ div.innerHTML =
+"<h3>" +
+item.title +
+
+" <span style='cursor:pointer;font-size:24px' onclick=\"toggleFavorite('concept_" +
+item.title +
+"')\">" +
+
+(
+favorites.includes(
+"concept_" + item.title
+)
+
+? "★" : "☆"
+
+)
+
++
+
+"</span></h3>" + 
+
+"<p>📚 <b>과목:</b> " +
+(item.subject || "미분류") +
+"</p>" +
+
+"<p>🧩 <b>카테고리:</b> " +
+(item.category || "미분류") +
+"</p>" +
+
+"<p>📖 <b>설명</b></p>" +
+
+"<p>" +
+item.content +
+"</p><hr>";
+
+        box.appendChild(div);
+
+    });
+
+}
+
+function updateFavoriteCount(){
+    document.getElementById("favoriteCount").textContent =
+    "⭐ " + favorites.length;
+}
