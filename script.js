@@ -480,7 +480,7 @@ const formulas = [
 title:"무게",
 subject:"물리",
 category:"역학",
-formula:"W = mg"
+formula:"F = mg"
 },
 
 {
