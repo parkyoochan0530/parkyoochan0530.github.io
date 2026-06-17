@@ -452,7 +452,6 @@ const concepts = [
 
 
 
-
 ];
 
 
