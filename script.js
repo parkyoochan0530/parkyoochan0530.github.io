@@ -448,9 +448,7 @@ const concepts = [
 
 {title:"볼록 렌즈",subject:"물리",category:"광학",content:"가운데가 두껍고 빛을 모으는 렌즈이다."},
 
-{title:"빛의 합성",subject:"물리",category:"광학",content:"여러 색의 빛이 섞여 새로운 색을 만드는 현상이다."},
 
-{title:"물체의 색",subject:"물리",category:"광학",content:"물체가 반사하는 빛의 색을 우리 눈이 인식한 결과이다."}
 
 
 
