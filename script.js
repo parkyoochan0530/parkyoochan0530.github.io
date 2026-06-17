@@ -1,5 +1,3 @@
-
-
 let favorites =
 JSON.parse(
 localStorage.getItem("favorites")
@@ -132,6 +130,10 @@ const concepts = [
 
 {title:"벡터량",subject:"물리",category:"역학",content:"크기와 방향을 모두 가지는 물리량이다. 힘, 속도, 가속도 등이 대표적인 예이다."},
 
+{title:"질량",subject:"물리",category:"역학",content:"물체가 가진 물질의 양이다. 장소가 바뀌어도 변하지 않는다."},
+
+{title:"무게",subject:"물리",category:"역학",content:"중력에 의해 물체가 받는 힘이다."},
+
 {title:"이동 거리",subject:"물리",category:"역학",content:"물체가 실제로 이동한 경로의 전체 길이이다. 스칼라량이다."},
 
 {title:"변위",subject:"물리",category:"역학",content:"출발점에서 도착점까지의 위치 변화이다. 방향을 가지므로 벡터량이다."},
@@ -144,23 +146,13 @@ const concepts = [
 
 {title:"가속도",subject:"물리",category:"역학",content:"단위 시간 동안 속도가 변하는 정도이다. 단위는 a, m/s²이다."},
 
+{title:"관성",subject:"물리",category:"역학",content:"물체가 현재 운동 상태를 유지하려는 성질이다."},
+
 {title:"힘",subject:"물리",category:"역학",content:"물체의 운동 상태를 변화시키거나 물체를 변형시키는 원인이다. 단위는 N(뉴턴)이다."},
 
-{title:"만유인력",subject:"물리",category:"역학",content:"질량을 가진 모든 물체 사이에 작용하는 인력이다. 뉴턴이 발견하였다."},
+{title:"작용, 반작용",subject:"물리",category:"역학",content:"한 물체가 다른 물체에 힘을 가하면 크기가 같고 방향이 반대인 힘이 동시에 작용한다."},
 
 {title:"중력",subject:"물리",category:"역학",content:"지구가 물체를 중심 방향으로 끌어당기는 힘이다."},
-
-{title:"탄성력",subject:"물리",category:"역학",content:"변형된 물체가 원래 상태로 돌아가려는 힘이다. F = -kx로 구한다."},
-
-{title:"탄성",subject:"물리",category:"역학",content:"힘을 받아 변형된 물체가 힘이 제거되면 원래 모양으로 돌아가는 성질이다."},
-
-{title:"탄성 한계",subject:"물리",category:"역학",content:"물체가 탄성을 유지할 수 있는 최대 한계이다. 이를 넘으면 영구 변형이 남는다."},
-
-{title:"탄성력의 방향",subject:"물리",category:"역학",content:"항상 물체를 원래 상태로 되돌리려는 방향으로 작용한다."},
-
-{title:"탄성 계수",subject:"물리",category:"역학",content:"물체가 변형에 저항하는 정도를 나타내는 값이다."},
-
-{title:"장력",subject:"물리",category:"역학",content:"줄이나 실이 당겨질 때 발생하는 힘이다."},
 
 {title:"수직 항력",subject:"물리",category:"역학",content:"접촉면이 물체를 수직 방향으로 밀어주는 힘이다."},
 
@@ -172,23 +164,25 @@ const concepts = [
 
 {title:"운동 마찰력",subject:"물리",category:"역학",content:"물체가 실제로 움직일 때 작용하는 마찰력이다."},
 
-{title:"유체",subject:"물리",category:"역학",content:"흐를 수 있는 물질로 액체와 기체를 포함한다."},
+{title:"탄성",subject:"물리",category:"역학",content:"힘을 받아 변형된 물체가 힘이 제거되면 원래 모양으로 돌아가는 성질이다."},
 
-{title:"압력",subject:"물리",category:"역학",content:"단위 면적당 작용하는 힘이다. 압력 = 힘 ÷ 면적이다."},
+{title:"탄성력",subject:"물리",category:"역학",content:"변형된 물체가 원래 상태로 돌아가려는 힘이다. F = -kx로 구한다."},
+
+{title:"탄성력의 방향",subject:"물리",category:"역학",content:"항상 물체를 원래 상태로 되돌리려는 방향으로 작용한다."},
+
+{title:"탄성 한계",subject:"물리",category:"역학",content:"물체가 탄성을 유지할 수 있는 최대 한계이다. 이를 넘으면 영구 변형이 남는다."},
+
+{title:"탄성 계수",subject:"물리",category:"역학",content:"물체가 변형에 저항하는 정도를 나타내는 값이다."},
+
+{title:"장력",subject:"물리",category:"역학",content:"줄이나 실이 당겨질 때 발생하는 힘이다."},
+
+{title:"유체",subject:"물리",category:"역학",content:"흐를 수 있는 물질로 액체와 기체를 포함한다."},
 
 {title:"밀도",subject:"물리",category:"역학",content:"단위 부피당 질량이다. 밀도 = 질량 ÷ 부피이다."},
 
+{title:"압력",subject:"물리",category:"역학",content:"단위 면적당 작용하는 힘이다. 압력 = 힘 ÷ 면적이다."},
+
 {title:"부력",subject:"물리",category:"역학",content:"유체가 밀어내는 물체의 무게이다.부력 = 물체의 밀도 x 중력 가속도 x 물체의 부피이다."},
-
-{title:"관성",subject:"물리",category:"역학",content:"물체가 현재 운동 상태를 유지하려는 성질이다."},
-
-{title:"무게",subject:"물리",category:"역학",content:"중력에 의해 물체가 받는 힘이다."},
-
-{title:"질량",subject:"물리",category:"역학",content:"물체가 가진 물질의 양이다. 장소가 바뀌어도 변하지 않는다."},
-
-{title:"작용, 반작용",subject:"물리",category:"역학",content:"한 물체가 다른 물체에 힘을 가하면 크기가 같고 방향이 반대인 힘이 동시에 작용한다."},
-
-{title:"운동 방정식",subject:"물리",category:"역학",content:"힘과 가속도의 관계를 나타내는 식이다. F=ma로 표현된다."},
 
 {title:"등속 원운동",subject:"물리",category:"역학",content:"속력은 일정하지만 운동 방향이 계속 변하는 원운동이다."},
 
@@ -210,13 +204,13 @@ const concepts = [
 
 {title:"지레",subject:"물리",category:"역학",content:"받침점을 중심으로 회전하여 힘을 전달하는 단순 기계이다."},
 
-{title:"돌림힘(토크)",subject:"물리",category:"역학",content:"물체를 회전시키는 효과를 나타내는 힘이다."},
-
 {title:"1종 지레",subject:"물리",category:"역학",content:"받침점이 힘점과 작용점 사이에 있는 지레이다."},
 
 {title:"2종 지레",subject:"물리",category:"역학",content:"작용점이 받침점과 힘점 사이에 있는 지레이다."},
 
 {title:"3종 지레",subject:"물리",category:"역학",content:"힘점이 받침점과 작용점 사이에 있는 지레이다."},
+
+{title:"돌림힘(토크)",subject:"물리",category:"역학",content:"물체를 회전시키는 효과를 나타내는 힘이다."},
 
 {title:"운동량",subject:"물리",category:"역학",content:"질량과 속도의 곱으로 정의되는 물리량이다.p = mv로 나타낸다."},
 
@@ -226,11 +220,11 @@ const concepts = [
 
 {title:"반발 계수",subject:"물리",category:"역학",content:"충돌 후 속도차 ÷ 충돌 전 속도차로 나타낸다."},
 
-{title:"탄성충돌",subject:"물리",category:"역학",content:"운동량과 운동에너지가 모두 보존되는 충돌이다."},
+{title:"탄성충돌",subject:"물리",category:"역학",content:"운동량과 운동에너지가 모두 보존되는 충돌이다. 반발 계수가 1이다."},
 
 {title:"비탄성 충돌",subject:"물리",category:"역학",content:"운동량은 보존되지만 운동에너지 일부가 손실되는 충돌이다."},
 
-{title:"완전 비탄성 충돌",subject:"물리",category:"역학",content:"충돌 후 물체가 붙어서 함께 움직이는 충돌이다."},
+{title:"완전 비탄성 충돌",subject:"물리",category:"역학",content:"충돌 후 물체가 붙어서 함께 움직이는 충돌이다. 반발 계수가 0이다."},
 
 {title:"일",subject:"물리",category:"역학",content:"힘이 물체를 이동시켰을 때 전달된 에너지이다."},
 
@@ -243,14 +237,6 @@ const concepts = [
 {title:"운동 에너지",subject:"물리",category:"역학",content:"운동하는 물체가 가지는 에너지이다."},
 
 {title:"위치 에너지",subject:"물리",category:"역학",content:"물체의 위치에 의해 저장되는 에너지이다."},
-
-{title:"열 에너지",subject:"물리",category:"역학",content:"입자의 운동과 관련된 에너지이다."},
-
-{title:"화학 에너지",subject:"물리",category:"역학",content:"화학 결합에 저장된 에너지이다."},
-
-{title:"빛 에너지",subject:"물리",category:"역학",content:"전자기파 형태로 전달되는 에너지이다."},
-
-{title:"핵 에너지",subject:"물리",category:"역학",content:"원자핵 내부에 저장된 매우 큰 에너지이다."},
 
 {title:"일, 운동 에너지 정리",subject:"물리",category:"역학",content:"물체에 가해진 일은 운동에너지 변화량과 같다."},
 
@@ -268,6 +254,8 @@ const concepts = [
 
 {title:"열량 보존 법칙",subject:"물리",category:"역학",content:"외부와 열 교환이 없을 때 잃은 열량과 얻은 열량은 같다."},
 
+{title:"열 에너지",subject:"물리",category:"역학",content:"입자의 운동과 관련된 에너지이다."},
+
 {title:"전도",subject:"물리",category:"역학",content:"물질을 따라 열이 전달되는 현상이다."},
 
 {title:"대류",subject:"물리",category:"역학",content:"유체의 이동에 의해 열이 전달되는 현상이다."},
@@ -278,13 +266,13 @@ const concepts = [
 
 {title:"바이메탈",subject:"물리",category:"역학",content:"열팽창률이 다른 두 금속을 붙인 장치로 온도 조절에 사용된다."},
 
+{title:"화학 에너지",subject:"물리",category:"역학",content:"화학 결합에 저장된 에너지이다."},
+
+{title:"빛 에너지",subject:"물리",category:"역학",content:"전자기파 형태로 전달되는 에너지이다."},
+
+{title:"핵 에너지",subject:"물리",category:"역학",content:"원자핵 내부에 저장된 매우 큰 에너지이다."},
+
 {title:"마찰전기",subject:"물리",category:"전자기학",content:"두 물체를 마찰할 때 전자가 이동하며 발생하는 전기이다."},
-
-{title:"대전",subject:"물리",category:"전자기학",content:"물체가 전하를 띠게 되는 현상이다."},
-
-{title:"전하량 보존 법칙",subject:"물리",category:"전자기학",content:"전하는 생성되거나 소멸되지 않고 총량이 보존된다."},
-
-{title:"전기력",subject:"물리",category:"전자기학",content:"전하 사이에 작용하는 힘이다."},
 
 {title:"도체",subject:"물리",category:"전자기학",content:"전류가 잘 흐르는 물질이다."},
 
@@ -294,15 +282,19 @@ const concepts = [
 
 {title:"초전도체",subject:"물리",category:"전자기학",content:"특정 온도 이하에서 전기저항이 0이 되는 물질이다."},
 
-{title:"정전기 유도",subject:"물리",category:"전자기학",content:"접촉 없이 전하 재배치가 일어나는 현상이다."},
-
-{title:"유전 분극",subject:"물리",category:"전자기학",content:"절연체 내부 전하 분포가 한쪽으로 치우치는 현상이다."},
-
-{title:"쿨롱의 법칙",subject:"물리",category:"전자기학",content:"전기력은 전하량의 곱에 비례하고 거리의 제곱에 반비례한다."},
+{title:"대전",subject:"물리",category:"전자기학",content:"물체가 전하를 띠게 되는 현상이다."},
 
 {title:"전하",subject:"물리",category:"전자기학",content:"전기적 성질의 근원이며 양전하와 음전하가 있다."},
 
 {title:"전하량",subject:"물리",category:"전자기학",content:"전하의 양을 나타내는 물리량이다. 단위는 C이다."},
+
+{title:"전하량 보존 법칙",subject:"물리",category:"전자기학",content:"전하는 생성되거나 소멸되지 않고 총량이 보존된다."},
+
+{title:"전기력",subject:"물리",category:"전자기학",content:"전하 사이에 작용하는 힘이다."},
+
+{title:"정전기 유도",subject:"물리",category:"전자기학",content:"접촉 없이 전하 재배치가 일어나는 현상이다."},
+
+{title:"유전 분극",subject:"물리",category:"전자기학",content:"절연체 내부 전하 분포가 한쪽으로 치우치는 현상이다."},
 
 {title:"전류",subject:"물리",category:"전자기학",content:"전하가 일정한 방향으로 이동하는 현상이다."},
 
@@ -314,11 +306,9 @@ const concepts = [
 
 {title:"전기 저항",subject:"물리",category:"전자기학",content:"전류의 흐름을 방해하는 정도이다. 단위는 Ω이다."},
 
-{title:"옴의 법칙",subject:"물리",category:"전자기학",content:"전압은 전류와 저항의 곱과 같다. V=IR로 표현한다."},
+{title:"전류계",subject:"물리",category:"전자기학",content:"전류의 세기를 측정하는 기구로, 회로에 직렬로 연결한다."},
 
 {title:"전압계",subject:"물리",category:"전자기학",content:"전압을 측정하는 기구로, 회로에 병렬로 연결한다."},
-
-{title:"전류계",subject:"물리",category:"전자기학",content:"전류의 세기를 측정하는 기구로, 회로에 직렬로 연결한다."},
 
 {title:"기전력",subject:"물리",category:"전자기학",content:"전류를 흐르게 하는 전원의 능력이다.V로 표현하고, 단위는 V이다."},
 
@@ -329,10 +319,6 @@ const concepts = [
 {title:"휘트스톤 브리지",subject:"물리",category:"전자기학",content:"저항값을 정밀하게 측정하는 회로이다."},
 
 {title:"줄열",subject:"물리",category:"전자기학",content:"전류가 흐를 때 저항에서 발생하는 열에너지이다."},
-
-{title:"전기 에너지",subject:"물리",category:"전자기학",content:"전하의 이동이나 전기적 상태에 의해 저장된 에너지로, 전기 에너지 = 전력 x 시간(E=Pt)으로 계산한다. 예를 들어 100W 전구를 10초 동안 사용하면 전기에너지는 1000J이다."},
-
-{title:"전력",subject:"물리",category:"전자기학",content:"단위 시간 동안 사용되는 전기에너지이다. 단위는 J/s = W(와트)이고, 소비 전력 P = VI로 계산한다."},
 
 {title:"전력량",subject:"물리",category:"전자기학",content:"일정 시간 동안 소비된 전기에너지의 총량이다. 단위는 J이지만 주로 Wh 또는 kWh를 사용한다.W = Pt이고, 1Wh = 3600J이다."},
 
@@ -348,15 +334,7 @@ const concepts = [
  
 {title:"직선 전류 자기장 방향",subject:"물리",category:"전자기학",content:"오른손 엄지 방향을 전류로 할 때 나머지 손가락으로 도선을 감아쥐면 들어가는 방향으로 생긴다."},
 
-{title:"직선 전류 자기장 세기",subject:"물리",category:"전자기학",content:"B직선 = k(상수)I ÷ r으로 계산한다."},
-
-{title:"원형 전류 자기장 방향",subject:"물리",category:"전자기학",content:"오른손 네 손가락을 전류 방향으로 감을 때 엄지 방향이다."},
-
-{title:"원형 전류 자기장 세기",subject:"물리",category:"전자기학",content:"B원형 = kπ(상수)I ÷ r으로 계산한다."},
-
 {title:"솔레노이드 방향",subject:"물리",category:"전자기학",content:"오른손 네 손가락을 전류 방향으로 감을 때 엄지가 N극 방향이다."},
-
-{title:"솔레노이드 세기",subject:"물리",category:"전자기학",content:"B솔레노이드 = 2kπ(상수)nI으로 계산한다. n은 코일을 감은 수다."},
 
 {title:"전자석",subject:"물리",category:"전자기학",content:"전류가 흐를 때만 자기력을 가지는 자석이다."},
 
@@ -366,17 +344,17 @@ const concepts = [
 
 {title:"전자기 유도 현상",subject:"물리",category:"전자기학",content:"자기장의 변화에 의해 전류가 발생하는 현상이다."},
 
+{title:"전자기력",subject:"물리",category:"전자기학",content:"전기력과 자기력을 통틀어 이르는 말이다."},
+
 {title:"유도기전력",subject:"물리",category:"전자기학",content:"전자기 유도에 의해 발생하는 전압이다."},
 
 {title:"유도전류",subject:"물리",category:"전자기학",content:"유도기전력에 의해 흐르는 전류이다."},
 
 {title:"패러데이의 법칙",subject:"물리",category:"전자기학",content:"유도기전력은 자속 변화율에 비례한다."},
 
-{title:"전자기 유도",subject:"물리",category:"전자기학",content:"자기장 변화로 전기가 발생하는 원리이다."},
-
-{title:"전자기력",subject:"물리",category:"전자기학",content:"전기력과 자기력을 통틀어 이르는 말이다."},
-
 {title:"변압기",subject:"물리",category:"전자기학",content:"전자기 유도를 이용해 교류 전압을 높이거나 낮추는 장치이다."},
+
+{title:"전자기 유도",subject:"물리",category:"전자기학",content:"자기장 변화로 전기가 발생하는 원리이다."},
 
 {title:"파동",subject:"물리",category:"파동",content:"에너지가 공간을 통해 전달되는 현상이다."},
 
@@ -384,27 +362,23 @@ const concepts = [
 
 {title:"횡파",subject:"물리",category:"파동",content:"진동 방향과 진행 방향이 서로 수직인 파동이다."},
 
-{title:"종파",subject:"물리",category:"파동",content:"진동 방향과 진행 방향이 같은 파동이다."},
-
-{title:"구면파",subject:"물리",category:"파동",content:"점파원에서 구 모양으로 퍼지는 파동이다."},
-
-{title:"평면파",subject:"물리",category:"파동",content:"파면이 평면인 파동이다."},
-
-{title:"하위헌스의 원리",subject:"물리",category:"파동",content:"파면의 모든 점이 새로운 파원의 역할을 한다는 원리이다."},
-
 {title:"파장",subject:"물리",category:"파동",content:"같은 위상의 두 점 사이 거리이다."},
 
 {title:"진폭",subject:"물리",category:"파동",content:"평형 위치에서 최대 변위이다."},
 
 {title:"주기",subject:"물리",category:"파동",content:"한 번 진동하는 데 걸리는 시간이다."},
 
-{title:"골",subject:"물리",category:"파동",content:"횡파에서 가장 낮은 부분이다."},
+{title:"주파수",subject:"물리",category:"파동",content:"1초 동안 반복되는 진동 횟수이다. 단위는 Hz이다."},
 
-{title:"마루",subject:"물리",category:"파동",content:"횡파에서 가장 높은 부분이다."},
+{title:"종파",subject:"물리",category:"파동",content:"진동 방향과 진행 방향이 같은 파동이다."},
 
-{title:"전파 속도",subject:"물리",category:"파동",content:"파동이 진행하는 속도이다."},
+{title:"구면파",subject:"물리",category:"파동",content:"점파원에서 구 모양으로 퍼지는 파동이다."},
+
+{title:"평면파",subject:"물리",category:"파동",content:"파면이 평면인 파동이다."},
 
 {title:"전파 속력",subject:"물리",category:"파동",content:"파동의 이동 속도를 의미한다."},
+
+{title:"전파 속도",subject:"물리",category:"파동",content:"파동이 진행하는 속도이다."},
 
 {title:"평면파의 반사",subject:"물리",category:"파동",content:"평면파가 경계면에 부딪혀 되돌아오는 현상이다. 입사각과 반사각은 항상 같다."},
 
@@ -418,6 +392,12 @@ const concepts = [
 
 {title:"상대 굴절률",subject:"물리",category:"파동",content:"한 매질에 대한 다른 매질의 굴절 정도를 나타내는 값이다."},
 
+{title:"하위헌스의 원리",subject:"물리",category:"파동",content:"파면의 모든 점이 새로운 파원의 역할을 한다는 원리이다."},
+
+{title:"골",subject:"물리",category:"파동",content:"횡파에서 가장 낮은 부분이다."},
+
+{title:"마루",subject:"물리",category:"파동",content:"횡파에서 가장 높은 부분이다."},
+
 {title:"전반사",subject:"물리",category:"파동",content:"굴절 대신 모든 빛이 반사되는 현상이다."},
 
 {title:"겉보기 깊이",subject:"물리",category:"파동",content:"굴절 때문에 실제보다 얕거나 깊게 보이는 깊이이다."},
@@ -430,17 +410,23 @@ const concepts = [
 
 {title:"소리의 회절",subject:"물리",category:"파동",content:"소리가 장애물 뒤쪽으로 휘어 전달되는 현상이다."},
 
-{title:"주파수",subject:"물리",category:"파동",content:"1초 동안 반복되는 진동 횟수이다. 단위는 Hz이다."},
-
 {title:"초음파",subject:"물리",category:"파동",content:"사람이 들을 수 없는 높은 진동수의 소리이다."},
 
-{title:"상쇄 간섭",subject:"물리",category:"파동",content:"두 파동이 만나 진폭이 줄어드는 간섭 현상이다."},
-
 {title:"보강 간섭",subject:"물리",category:"파동",content:"두 파동이 만나 진폭이 커지는 간섭 현상이다."},
+
+{title:"상쇄 간섭",subject:"물리",category:"파동",content:"두 파동이 만나 진폭이 줄어드는 간섭 현상이다."},
 
 {title:"정상파",subject:"물리",category:"파동",content:"반대 방향으로 진행하는 두 파동이 만나 형성되는 파동이다."},
 
 {title:"맥놀이 수",subject:"물리",category:"파동",content:"진동수가 다른 두 파동이 겹칠 때 소리가 커졌다 작아졌다 하는 현상이 1초에 몇 번 반복되는지를 나타내는 수."},
+
+{title:"빛의 합성",subject:"물리",category:"광학",content:"여러 색의 빛이 섞여 새로운 색의 빛을 만드는 현상이다. 빛의 삼원색은 빨강(R), 초록(G), 파랑(B)이며, 빨강+초록=노랑, 초록+파랑=청록, 빨강+파랑=자홍, 빨강+초록+파랑=흰색이다."},
+
+{title:"물체의 색",subject:"물리",category:"광학",content:"물체는 특정 색의 빛을 반사하고 나머지 색의 빛을 흡수한다. 우리가 보는 물체의 색은 반사된 빛의 색이다. 예를 들어 빨간 물체는 빨간빛을 반사하고 다른 색의 빛은 대부분 흡수한다."},
+
+{title:"빛의 분산",subject:"물리",category:"광학",content:"빛이 파장에 따라 다른 각도로 굴절되어 색이 나뉘는 현상이다."},
+
+{title:"빛의 산란",subject:"물리",category:"광학",content:"빛이 작은 입자에 의해 여러 방향으로 퍼지는 현상이다."},
 
 {title:"실상",subject:"물리",category:"광학",content:"빛이 실제로 모여 형성되는 상이다. 스크린에 나타낼 수 있다."},
 
@@ -458,17 +444,15 @@ const concepts = [
 
 {title:"상의 배율",subject:"물리",category:"광학",content:"상의 크기를 물체의 크기로 나눈 값이다."},
 
-{title:"볼록 렌즈",subject:"물리",category:"광학",content:"가운데가 두껍고 빛을 모으는 렌즈이다."},
-
 {title:"오목 렌즈",subject:"물리",category:"광학",content:"가운데가 얇고 빛을 퍼뜨리는 렌즈이다."},
+
+{title:"볼록 렌즈",subject:"물리",category:"광학",content:"가운데가 두껍고 빛을 모으는 렌즈이다."},
 
 {title:"빛의 합성",subject:"물리",category:"광학",content:"여러 색의 빛이 섞여 새로운 색을 만드는 현상이다."},
 
-{title:"물체의 색",subject:"물리",category:"광학",content:"물체가 반사하는 빛의 색을 우리 눈이 인식한 결과이다."},
+{title:"물체의 색",subject:"물리",category:"광학",content:"물체가 반사하는 빛의 색을 우리 눈이 인식한 결과이다."}
 
-{title:"빛의 분산",subject:"물리",category:"광학",content:"빛이 파장에 따라 다른 각도로 굴절되어 색이 나뉘는 현상이다."},
 
-{title:"빛의 산란",subject:"물리",category:"광학",content:"빛이 작은 입자에 의해 여러 방향으로 퍼지는 현상이다."}
 
 
 ];
@@ -484,21 +468,28 @@ formula:"F = mg"
 },
 
 {
-title:"속도와 시간의 관계식",
+title:"운동 방정식(뉴턴 제2법칙)",
+subject:"물리",
+category:"역학",
+formula:"F = ma"
+},
+
+{
+title:"등가속도 운동 제1공식",
 subject:"물리",
 category:"역학",
 formula:"v = v₀ + at"
 },
 
 {
-title:"변위와 시간의 관계식",
+title:"등가속도 운동 제2공식",
 subject:"물리",
 category:"역학",
 formula:"s = v₀t + ½at²"
 },
 
 {
-title:"변위와 속도의 관계식",
+title:"등가속도 운동 제3공식",
 subject:"물리",
 category:"역학",
 formula:"2as = v² - v₀²"
@@ -631,6 +622,13 @@ formula:"Q = VIt"
 },
 
 {
+title:"쿨롱의 법칙",
+subject:"물리",
+category:"전자기학",
+formula:"F = kq₁q₂/r²"
+},
+
+{
 title:"전하량이 한 일",
 subject:"물리",
 category:"전자기학",
@@ -648,11 +646,11 @@ formula:"P = VI"
 title:"자기장의 세기",
 subject:"물리",
 category:"전자기학",
-formula:"B = 자속/S(표면적)"
+formula:"B = Φ(자속)/S(표면적)"
 },
 
 {
-title:"직선 전류 자기장",
+title:"직선 전류 자기장의 세기",
 subject:"물리",
 category:"전자기학",
 formula:"B = kI/r"
@@ -715,10 +713,10 @@ formula:"맥놀이수 = |f₁ - f₂|"
 },
 
 {
-title:"렌즈 제작자의 공식",
+title:"얇은 렌즈 공식",
 subject:"물리",
 category:"광학",
-formula:"a:물체와 거울 혹은 렌즈 중심 사이의 거리, b:상과 거울 혹은 렌즈 중심 사이의 거리, f:초점 거리, m:상의 배율, 1/a + 1/b = 1/f, m = -b/a"
+formula:"d0:물체와 거울 혹은 렌즈 중심 사이의 거리, d1:상과 거울 혹은 렌즈 중심 사이의 거리, f:초점 거리, m:상의 배율, 1/d0 + 1/d1 = 1/f, m = d1/d0"
 }
 
 ];
@@ -1284,6 +1282,10 @@ function showFavorites(){
 
         "<p>📚 <b>과목:</b> " +
         item.subject +
+        "</p>" +
+
+        "<p>🧩 <b>카테고리:</b> " +
+        item.category +
         "</p>" +
 
         "<p>📖 <b>설명:</b></p>" +
