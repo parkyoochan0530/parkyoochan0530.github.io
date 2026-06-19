@@ -514,17 +514,17 @@ formula:"F = G(상수)m₁m₂/r²"
 },
 
 {
-title:"용수철 직렬 연결시 용수철 상수",
+title:"정지 마찰력",
 subject:"물리",
 category:"역학",
-formula:"1/k = 1/k₁ + 1/k₂"
+formula:"Fs ≤ μsmgcosθ"
 },
 
 {
-title:"용수철 병렬 연결시 용수철 상수",
+title:"운동 마찰력",
 subject:"물리",
 category:"역학",
-formula:"k = k₁ + k₂"
+formula:"Fk = μkmgcosθ"
 },
 
 {
@@ -542,38 +542,17 @@ formula:"E = ½kx²"
 },
 
 {
-title:"위치에너지",
+title:"용수철 직렬 연결시 용수철 상수",
 subject:"물리",
 category:"역학",
-formula:"Ep = mgh"
+formula:"1/k = 1/k₁ + 1/k₂"
 },
 
 {
-title:"운동에너지",
+title:"용수철 병렬 연결시 용수철 상수",
 subject:"물리",
 category:"역학",
-formula:"Ek = ½mv²"
-},
-
-{
-title:"역학적 에너지",
-subject:"물리",
-category:"역학",
-formula:"E = Ek + Ep"
-},
-
-{
-title:"정지 마찰력",
-subject:"물리",
-category:"역학",
-formula:"Fs ≤ μsmgcosθ"
-},
-
-{
-title:"운동 마찰력",
-subject:"물리",
-category:"역학",
-formula:"Fk = μkmgcosθ"
+formula:"k = k₁ + k₂"
 },
 
 {
@@ -581,13 +560,6 @@ title:"부력",
 subject:"물리",
 category:"역학",
 formula:"F = ρgV"
-},
-
-{
-title:"뉴턴 제2법칙",
-subject:"물리",
-category:"역학",
-formula:"F = ma"
 },
 
 {
@@ -605,17 +577,24 @@ formula:"F = mv²/r"
 },
 
 {
-title:"옴의 법칙",
+title:"운동에너지",
 subject:"물리",
-category:"전자기학",
-formula:"V = IR"
+category:"역학",
+formula:"Ek = ½mv²"
 },
 
 {
-title:"줄열",
+title:"위치에너지",
 subject:"물리",
-category:"전자기학",
-formula:"Q = VIt"
+category:"역학",
+formula:"Ep = mgh"
+},
+
+{
+title:"역학적 에너지",
+subject:"물리",
+category:"역학",
+formula:"E = Ek + Ep"
 },
 
 {
@@ -623,6 +602,13 @@ title:"쿨롱의 법칙",
 subject:"물리",
 category:"전자기학",
 formula:"F = kq₁q₂/r²"
+},
+
+{
+title:"옴의 법칙",
+subject:"물리",
+category:"전자기학",
+formula:"V = IR"
 },
 
 {
@@ -637,6 +623,13 @@ title:"전력",
 subject:"물리",
 category:"전자기학",
 formula:"P = VI"
+},
+
+{
+title:"줄열",
+subject:"물리",
+category:"전자기학",
+formula:"Q = VIt"
 },
 
 {
@@ -713,7 +706,14 @@ formula:"맥놀이수 = |f₁ - f₂|"
 title:"얇은 렌즈 공식",
 subject:"물리",
 category:"광학",
-formula:"d0:물체와 거울 혹은 렌즈 중심 사이의 거리, d1:상과 거울 혹은 렌즈 중심 사이의 거리, f:초점 거리, m:상의 배율, 1/d0 + 1/d1 = 1/f, m = d1/d0"
+formula:"d0:물체와 거울 혹은 렌즈 중심 사이의 거리, d1:상과 거울 혹은 렌즈 중심 사이의 거리, f:초점 거리, 1/d0 + 1/d1 = 1/f, m = d1/d0"
+},
+
+{
+title:"상의 배율",
+subject:"물리",
+category:"광학",
+formula:"d0:물체와 거울 혹은 렌즈 중심 사이의 거리, d1:상과 거울 혹은 렌즈 중심 사이의 거리, m:상의 배율, m = -d1/d0"
 }
 
 ];
